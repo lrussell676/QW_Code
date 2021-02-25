@@ -14,10 +14,9 @@ plt.rcParams.update({'font.size': 16})
 import scipy.optimize as sc
 #from scipy.optimize import fsolve # Finding Zeros of Functions section
 
-
 """
 
-Task Two - 21/01/2021
+21/01/2021
 
 """
 linspace_size = 10000
@@ -59,7 +58,7 @@ print(f"The solutions are: {SolutionsR[0]} and {SolutionsR[1]} \n \n")
 
 """
 
-Task Three - 25/01/2021, 28/01/2021
+25/01/2021, 28/01/2021
 
 """
 
@@ -231,69 +230,3 @@ Plot3b.set(ylabel = "$E_{n}$/$E_{0}$", xlabel = "Relative (log(10)) Depth")
 Plot3b.plot(d_log_fake,E_E0, ls='', marker='o')
 Plot3b.grid(b=True, which='major', linestyle=':', linewidth='2')
 plt.show()
-
-
-"""
-
-Task Four - 04/02/2021, 11/02/2021
-
-"""
-
-al_ratio = np.linspace(0, 0.4, 100000)
-E_g = (1.424 + 1.247*al_ratio)
-
-Figure, Plot4 = plt.subplots(1,1)
-Figure.patch.set_facecolor('xkcd:mint green')
-Figure.suptitle("Al Ratio Plot")
-Plot4.set(ylabel = "$E_{g}$ (eV)", xlabel = "AlGa Fraction (x)")
-Plot4.plot(al_ratio,E_g)
-Plot4.plot(al_ratio[83514],E_g[83514], marker='x', markersize=15)
-#Plot4.plot(al_ratio[20128],E_g[20128], marker='x', markersize=15)
-Plot4.grid(b=True, which='major', linestyle=':', linewidth='2')
-Plot4.legend(['$E_{g}$','X Marker Point of E_pump','X Marker Point of E_emission'],loc='best')
-plt.show()
-
-h = (6.62607015e-34)
-E_pump = (h* ((3e8)/(675e-9)) )/(1.6e-19)
-E_emission = (h* ((3e8)/(815e-9)) )/(1.6e-19)
-
-print(f"\n \n E_pump is {E_g[83514]}eV at AlGa Fraction {al_ratio[83514]}")
-
-#print(f"\n E_emission is {E_g[20128]}eV at AlGa Fraction {al_ratio[20128]}")
-
-print("\n Take 'A' Barrier Composition as Al_{0.330}Ga_{0.670}As")
-
-print("\n Take 'B' Well Composition as GaAs")
-
-Figure, Plot5 = plt.subplots(1,1)
-Figure.patch.set_facecolor('xkcd:mint green')
-Figure.suptitle("$E_{0}$ vs Well Width")
-Plot5.set(ylabel = "$E_{0}$/eV", xlabel = "a (m)")
-Plot5.plot(a,E_0)
-Plot5.grid(b=True, which='major', linestyle=':', linewidth='2')
-
-
-me = (9.11e-31)
-mhh = 0.45*me
-a = np.linspace(0.1e-9,7e-9,linspace_size)
-
-E_0e = ((h_2/(8*me*(a**2))))/(1.6e-19)
-E_0hh = ((h_2/(8*mhh*(a**2))))/(1.6e-19)
-
-Figure, Plot6 = plt.subplots(1,1)
-Figure.patch.set_facecolor('xkcd:mint green')
-Figure.suptitle("$E_{0}$ vs Well Width")
-Plot6.set(ylabel = "$E_{0}$/eV", xlabel = "a (nm)")
-Plot6.plot(a*(1e9),E_0e, label = '$E_{e(0)}$ =' r'$\frac{h^2}{8m_{0}a^2}$')
-Plot6.plot(a*(1e9),E_0hh, label = '$E_{hh(0)}$ =' r'$\frac{h^2}{8m_{hh}a^2}$')
-Plot6.legend(loc = 'best')
-Plot6.grid(b=True, which='major', linestyle=':', linewidth='2')
-plt.minorticks_on()
-Plot6.grid(b=True, which='minor', linestyle='-', linewidth='0.2')
-
-plt.ylim(0, 0.5)
-plt.show()
-
-anm = np.sqrt( ((h_2*(1-0.46))/(8*me*((E_pump-E_emission)*(1.6e-19)) )))
-
-print(anm)
