@@ -14,7 +14,7 @@ import scipy.optimize as sc
 
 """
 
-Task Five - 18/02/2021
+18/02/2021
 
 """
 
@@ -127,7 +127,7 @@ plt.show()
 
 """
 
-Task Five C - 23/02/2021
+23/02/2021
 
 """
 
@@ -220,7 +220,7 @@ ax.set(xlabel = 'x/a',\
                 'wrt a=7.30nm')
 plt.show()
 
-
+'''
 #PLAYING WITH A
 
 
@@ -303,3 +303,4 @@ ax.set(xlabel = 'x/a',\
              title = 'The Eigenfunctions for the Bound Eigenstates ' \
                 'wrt a=1.30nm')
 plt.show()
+'''
