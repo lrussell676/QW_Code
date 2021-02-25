@@ -14,7 +14,7 @@ import scipy.optimize as sc
 
 """
 
-Task Four - 04/02/2021, 11/02/2021, 13/02/2021
+04/02/2021, 11/02/2021, 13/02/2021
 
 """
 linspace_size = 100
