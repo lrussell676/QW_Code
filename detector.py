@@ -118,7 +118,7 @@ ax.grid(b=True, which='major', linestyle=':', linewidth='2')
 ax.legend([r'$E_{1}$',r'$E_{2}$',\
            '$\u0394 E = E_{2} - E_{1}$',\
            '$E_{absorption}$ at a=7.16nm'], \
-                loc = 'best', prop={'size': 15})
+                loc = 'best', prop={'size': 20})
 plt.minorticks_on()
 ax.set_ylim(0,0.5)
 ax.set_xlim(6,12)
@@ -196,7 +196,7 @@ ax.plot(x/a2,psi1)
 ax.plot(x/a2,psi2)
 ax.grid(b=True, which='major', linestyle=':', linewidth='2')
 ax.legend(['$\u03C8_{1}(x)$','$\u03C8_{2}(x)$'], \
-                loc = 'best', prop={'size': 15})
+                loc = 'best', prop={'size': 20})
 ax.set_xlim(-2,2)
 ax.set(xlabel = 'x/a',\
              ylabel = r'Normaslised Amplitude $(m^{(-\frac{1}{2})})$')
@@ -205,8 +205,6 @@ ax.set_title('The Eigenfunctions for the Bound Eigenstates ' \
 axx.plot(x/a2,psi1**2)
 axx.plot(x/a2,psi2**2)
 axx.grid(b=True, which='major', linestyle=':', linewidth='2')
-axx.legend(['$\u03C8_{1}(x)$','$\u03C8_{2}(x)$'], \
-                loc = 'best', prop={'size': 15})
 axx.set_xlim(-2,2)
 axx.set(xlabel = 'x/a',\
              ylabel = r'Normaslised Probability Amplitude')
