@@ -18,12 +18,12 @@ import scipy.optimize as sc
 
 """
 linspace_size = 100
-h_2 = (6.62607015e-34)**2
-h_bar2 = ((6.62607015e-34)/(2*np.pi))**2
-m = 0.06*(9.11e-31)
+h_2 = (6.626e-34)**2
+h_bar2 = ((6.626e-34)/(2*np.pi))**2
+m = 0.06*(9.109e-31)
 a = np.linspace(0.1e-9,10e-9,linspace_size)
 al_ratio = np.linspace(0, 0.4, 100000)
-E_0 = ((h_2/(8*m*(a**2))))/(1.6e-19)
+E_0 = ((h_2/(8*m*(a**2))))/(1.602e-19)
 E_g = (1.424 + 1.247*al_ratio)
 
 Figure, Plot4 = plt.subplots(1,1)
@@ -36,9 +36,9 @@ Plot4.grid(b=True, which='major', linestyle=':', linewidth='2')
 Plot4.legend(['$E_{g}$','X Marker Point of E_pump','X Marker Point of E_emission'],loc='best')
 plt.show()
 
-h = (6.62607015e-34)
-E_pump = (h* ((3e8)/(675e-9)) )/(1.6e-19)
-E_emission = (h* ((3e8)/(815e-9)) )/(1.6e-19)
+h = (6.626e-34)
+E_pump = (h* ((2.998e8)/(675e-9)) )/(1.602e-19)
+E_emission = (h* ((2.998e8)/(815e-9)) )/(1.602e-19)
 
 print(f"\n \n E_pump is {E_g[83514]}eV at AlGa Fraction {al_ratio[83514]}")
 
@@ -54,18 +54,18 @@ Plot5.plot(a,E_0)
 Plot5.grid(b=True, which='major', linestyle=':', linewidth='2')
 
 
-m = (9.11e-31)
+m = (9.109e-31)
 me = 0.06*m
 mhh = 0.57*m
 a = np.linspace(0.1e-9,7e-9,linspace_size)
 
-E_0e = ((h_2/(8*me*(a**2))))/(1.6e-19)
-E_0hh = ((h_2/(8*mhh*(a**2))))/(1.6e-19)
+E_0e = ((h_2/(8*me*(a**2))))/(1.602e-19)
+E_0hh = ((h_2/(8*mhh*(a**2))))/(1.602e-19)
 
-Figure, Plot6 = plt.subplots(1,1)
-Figure.suptitle("$E_{0}$ vs Well Width")
-Plot6.set(ylabel = "$E_{0}$/eV", xlabel = "a (nm)")
-Plot6.plot(a*(1e9),E_0e, label = '$E_{e(0)}$ =' r'$\frac{h^2}{8m_{0}a^2}$')
+Figure, Plot6 = plt.subplots(1,1,constrained_layout=True)
+Plot6.set(ylabel = "$E_{0}$ (eV)", xlabel = "a (nm)", \
+          title = "$E_{0}$ vs Well Width")
+Plot6.plot(a*(1e9),E_0e, label = '$E_{e(0)}$ =' r'$\frac{h^2}{8m_{e}a^2}$')
 Plot6.plot(a*(1e9),E_0hh, label = '$E_{hh(0)}$ =' r'$\frac{h^2}{8m_{hh}a^2}$')
 Plot6.legend(loc = 'best')
 Plot6.grid(b=True, which='major', linestyle=':', linewidth='2')
@@ -75,11 +75,9 @@ Plot6.grid(b=True, which='minor', linestyle='-', linewidth='0.2')
 plt.ylim(0, 5)
 plt.show()
 
-h = 6.62607004e-34
-c = 299792458
-m0 = 9.11e-31
+m0 = 9.109e-31
 
-V0 = (1.247*0.33)*(1.66e-19)
+V0 = (1.247*0.33)*(1.602e-19)
 V0e = 2/3*V0
 V0h = 1/3*V0
 a = np.arange(1e-9,11e-9,0.1e-9)
@@ -168,18 +166,18 @@ plt.show()
 
 #Plotting Transition Energy vs a
 a = a/1e-9
-Et = (E1e + E1h + 1.424*1.66e-19)/(1.66e-19)
+Et = (E1e + E1h + 1.424*1.602e-19)/(1.602e-19)
 Figure, SubPlot1 = plt.subplots(1,1,constrained_layout=True)
 SubPlot1.plot(a,Et)
 SubPlot1.axhline(y=E_emission, linewidth='0.8', \
                  linestyle='--', color='orange')
-SubPlot1.axvline(x=5.22, linewidth='0.8', linestyle='--', \
+SubPlot1.axvline(x=5.44, linewidth='0.8', linestyle='--', \
                  color='orange')
 SubPlot1.set(xlabel = 'a (nm)', \
-             ylabel = '$E_{t}$ (eV)',\
-                 title = '$E_{t}$ vs Well Width')
-SubPlot1.legend([r'$E_{t}$ = $E_{1e} + E_{1h} + V_{0}$',\
-                 '$E_{emission}$ at a=5.22nm'], \
+             ylabel = '$E_{emission}$ (eV)',\
+                 title = '$E_{emission}$ vs Well Width')
+SubPlot1.legend([r'$E_{emission}$ = $E_{1e} + E_{1h} + V_{0}$',\
+                 '$E_{emission}$ at a=5.44nm'], \
                 loc = 'best', prop={'size': 15})
 SubPlot1.grid(b=True, which='major', linestyle=':', linewidth='2')
 plt.minorticks_on()
