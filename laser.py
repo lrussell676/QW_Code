@@ -67,7 +67,7 @@ Plot6.set(ylabel = "$E_{0}$ (eV)", xlabel = "a (nm)", \
           title = "$E_{0}$ vs Well Width")
 Plot6.plot(a*(1e9),E_0e, label = '$E_{e(0)}$ =' r'$\frac{h^2}{8m_{e}a^2}$')
 Plot6.plot(a*(1e9),E_0hh, label = '$E_{hh(0)}$ =' r'$\frac{h^2}{8m_{hh}a^2}$')
-Plot6.legend(loc = 'best')
+Plot6.legend(loc = 'best', prop={'size': 25})
 Plot6.grid(b=True, which='major', linestyle=':', linewidth='2')
 plt.minorticks_on()
 Plot6.grid(b=True, which='minor', linestyle='-', linewidth='0.2')
@@ -178,7 +178,7 @@ SubPlot1.set(xlabel = 'a (nm)', \
                  title = '$E_{emission}$ vs Well Width')
 SubPlot1.legend([r'$E_{emission}$ = $E_{1e} + E_{1h} + V_{0}$',\
                  '$E_{emission}$ at a=5.44nm'], \
-                loc = 'best', prop={'size': 15})
+                loc = 'best', prop={'size': 25})
 SubPlot1.grid(b=True, which='major', linestyle=':', linewidth='2')
 plt.minorticks_on()
 SubPlot1.grid(b=True, which='minor', linestyle='-', linewidth='0.2')
