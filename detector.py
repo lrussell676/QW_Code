@@ -211,7 +211,7 @@ axx.set(xlabel = 'x/a',\
 plt.show()
 
 print("\n Take InGaAs Composition as In_{:.2f}Ga_{:.2f}As \n".format\
-      (InP_lc,(1-InP_lc)))
+      ((1-InP_lc),InP_lc))
 
 '''
 #PREVIOUS GRAPH CODE
