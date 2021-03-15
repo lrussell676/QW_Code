@@ -102,6 +102,13 @@ plt.show()
 
 E1e = ((4*(roots1**2))/(np.pi**2))*E0e
 E2e = ((4*(roots2**2))/(np.pi**2))*E0e
+'''
+The 'delE' commented out here (line 112) can be used to calculate the 
+absorption energies directly, although
+it is more computationally resourceful just to calculate E2-E1 since these
+have already been found.
+'''
+#delE = (2*((h_bar2))/(eff_me*(a**2)))*(roots2**2 - roots1**2)/eV
 a = a/1e-9
 E1e, E2e = E1e/eV, E2e/eV
 delE = E2e-E1e
