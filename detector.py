@@ -24,7 +24,6 @@ eV = (1.602e-19)
 h = 6.626e-34
 h_2 = (6.626e-34)**2
 h_bar2 = ((6.626e-34)/(2*np.pi))**2
-m = 0.06*(9.109e-31)
 a = np.linspace(6e-9,12e-9,linspace_size)
 
 InP_lc = (5.8697 - 6.0583)/(-0.4051)
@@ -103,7 +102,7 @@ plt.show()
 E1e = ((4*(roots1**2))/(np.pi**2))*E0e
 E2e = ((4*(roots2**2))/(np.pi**2))*E0e
 '''
-The 'delE' commented out here (line 111) can be used to calculate the 
+The 'delE' commented out here (line 110) can be used to calculate the 
 absorption energies directly, although
 it is more computationally resourceful just to calculate E2-E1 since these
 have already been found.
