@@ -169,9 +169,9 @@ a = a/1e-9
 Et = (E1e + E1h + 1.424*1.602e-19)/(1.602e-19)
 Figure, SubPlot1 = plt.subplots(1,1,constrained_layout=True)
 SubPlot1.plot(a,Et)
-SubPlot1.axhline(y=E_emission, linewidth='0.8', \
+SubPlot1.axhline(y=E_emission, linewidth='2', \
                  linestyle='--', color='orange')
-SubPlot1.axvline(x=5.44, linewidth='0.8', linestyle='--', \
+SubPlot1.axvline(x=5.44, linewidth='2', linestyle='--', \
                  color='orange')
 SubPlot1.set(xlabel = 'a (nm)', \
              ylabel = '$E_{emission}$ (eV)',\
