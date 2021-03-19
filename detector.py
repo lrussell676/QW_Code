@@ -116,9 +116,9 @@ Figure, (ax) = plt.subplots(1,1,constrained_layout=True)
 ax.plot(a,E1e)
 ax.plot(a,E2e)
 ax.plot(a,delE)
-ax.axhline(y=E_absorp, linewidth='0.8', \
+ax.axhline(y=E_absorp, linewidth='2', \
                  linestyle='--', color='orange')
-ax.axvline(x=7.16, linewidth='0.8', \
+ax.axvline(x=7.16, linewidth='2', \
                  linestyle='--', color='orange')
 ax.grid(b=True, which='major', linestyle=':', linewidth='2')
 ax.legend([r'$E_{1}$',r'$E_{2}$',\
